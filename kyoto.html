@@ -162,67 +162,7 @@
 <nav>
   <button onclick="setLanguage('vi')">Tiếng Việt</button>
   <button onclick="setLanguage('en')">English</button>
-  <button onclick="setLanguage('jp')">Japaneark-toggle {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: var(--button-bg);
-      border: none;
-      color: var(--button-text);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: background-color 0.3s;
-      z-index: 1000;
-    }
-    .dark-toggle:hover {
-      background-color: var(--button-hover-bg);
-    }
-    .back-home {
-      display: block;
-      max-width: 200px;
-      margin: 2rem auto 0;
-      padding: 0.8rem 1.2rem;
-      text-align: center;
-      background-color: var(--button-bg);
-      color: var(--button-text);
-      text-decoration: none;
-      font-weight: 700;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: background-color 0.3s;
-    }
-    .back-home:hover {
-      background-color: var(--button-hover-bg);
-    }
-    @keyframes fadeInDown {
-      from {opacity: 0; transform: translateY(-40px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeInUp {
-      from {opacity: 0; transform: translateY(40px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-  </style>
-</head>
-<body>
-
-<button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
-
-<header>
-  <h1 data-i18n="pageTitle">Kyoto – Cổ kính và bình yên</h1>
-</header>
-
-<nav>
-  <button onclick="setLanguage('vi')">Tiếng Việt</button>
-  <button onclick="setLanguage('en')">English</button>
-  <button onclick="setLanguage('jp')">Japanese</button>
+  <button onclick="setLanguage('jp')">日本語</button>
 </nav>
 
 <main>
@@ -319,5 +259,4 @@
   setLanguage('vi');
 </script>
 </body>
-
 </html>
