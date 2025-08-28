@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="pageTitle">Kyoto – Cổ kính và bình yên</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #fdf6e3;
+      --text-color: #333;
+      --accent-color: #b7410e;
+      --header-bg: #c1440e;
+      --header-text: #fff;
+      --section-bg: #fff7e6;
+      --button-bg: #b7410e;
+      --button-text: #fff;
+      --button-hover-bg: #a1360c;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #ddd;
+      --accent-color: #ff7f50;
+      --header-bg: #7a2e0e;
+      --header-text: #fff;
+      --section-bg: #1e1e1e;
+      --button-bg: #ff7f50;
+      --button-text: #121212;
+      --button-hover-bg: #e0663d;
+    }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 2rem 1rem;
+      text-align: center;
+      animation: fadeInDown 1s ease forwards;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: var(--section-bg);
+      padding: 1rem 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+    nav button {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    nav button:hover {
+      background-color: var(--button-hover-bg);
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background-color: var(--section-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+      animation: fadeIn 1s ease forwards;
+    }
+    main img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    main h2 {
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+    main ul {
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+    main ul li {
+      margin-bottom: 0.6rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--header-bg);
+      color: var(--header-text);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: var(--button-bg);
+      border: none;
+      color: var(--button-text);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+      z-index: 1000;
+    }
+    .dark-toggle:hover {
+      background-color: var(--button-hover-bg);
+    }
+    .back-home {
+      display: block;
+      max-width: 200px;
+      margin: 2rem auto 0;
+      padding: 0.8rem 1.2rem;
+      text-align: center;
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+    .back-home:hover {
+      background-color: var(--button-hover-bg);
+    }
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+<button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+
+<header>
+  <h1 data-i18n="pageTitle">Kyoto – Cổ kính và bình yên</h1>
+</header>
+
+<nav>
+  <button onclick="setLanguage('vi')">🇻🇳 Tiếng Việt</button>
+  <button onclick="setLanguage('en')">🇬🇧 English</button>
+  <button onclick="setLanguage('jp')">🇯🇵 日本語</button>
+</nav>
+
+<main>
+  <img src="https://hanoitourist.vn/sites/default/files/inline-images/Kiyomizu-dera-kyoto-featured-1244x700_3.jpg" alt="Kyoto Temple" />
+  <h2 data-i18n="introTitle">Giới thiệu về Kyoto</h2>
+  <p data-i18n="introText">
+    Kyoto là thủ đô cổ kính của Nhật Bản, nổi tiếng với những ngôi đền chùa truyền thống, khu vườn Nhật Bản thanh bình và nét văn hóa đặc trưng. Thành phố này mang đến trải nghiệm hòa quyện giữa lịch sử và thiên nhiên, giúp bạn cảm nhận sự bình yên đích thực.
+  </p>
+  
+  <h2 data-i18n="cultureTitle">Văn hóa và Di sản</h2>
+  <p data-i18n="cultureText">
+    Kyoto giữ gìn hơn 1,600 ngôi đền và chùa, trong đó có nhiều di sản thế giới UNESCO. Những lễ hội truyền thống như Gion Matsuri thu hút hàng nghìn du khách mỗi năm. Đặc biệt, trà đạo, kimono và nghệ thuật làm giấy truyền thống cũng được bảo tồn rất tốt.
+  </p>
+
+  <h2 data-i18n="attractionsTitle">Điểm tham quan nổi bật</h2>
+  <ul data-i18n="attractionsList">
+    <li>Đền Kinkaku-ji (Chùa Vàng)</li>
+    <li>Đền Fushimi Inari với hàng nghìn cổng Torii đỏ</li>
+    <li>Khu phố Gion – nơi có các geisha truyền thống</li>
+    <li>Rừng tre Arashiyama</li>
+  </ul>
+  
+  <h2 data-i18n="visitTipsTitle">Lời khuyên khi tham quan</h2>
+  <p data-i18n="visitTipsText">
+    Thời điểm đẹp nhất để ghé thăm Kyoto là mùa xuân khi hoa anh đào nở rộ hoặc mùa thu với sắc lá đỏ vàng tuyệt đẹp. Nên chuẩn bị giày thoải mái vì bạn sẽ đi bộ khá nhiều để khám phá các địa điểm.
+  </p>
+
+  <a href="dulichjapan.html" class="back-home" data-i18n="backHome">← Quay lại trang chính</a>
+</main>
+
+<footer>
+  <p>&copy; 2025 Du Lịch Nhật Bản | Thiết kế bởi ChatGPT</p>
+</footer>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+
+  const translations = {
+    vi: {
+      pageTitle: "Kyoto – Cổ kính và bình yên",
+      introTitle: "Giới thiệu về Kyoto",
+      introText: "Kyoto là thủ đô cổ kính của Nhật Bản, nổi tiếng với những ngôi đền chùa truyền thống, khu vườn Nhật Bản thanh bình và nét văn hóa đặc trưng. Thành phố này mang đến trải nghiệm hòa quyện giữa lịch sử và thiên nhiên, giúp bạn cảm nhận sự bình yên đích thực.",
+      cultureTitle: "Văn hóa và Di sản",
+      cultureText: "Kyoto giữ gìn hơn 1,600 ngôi đền và chùa, trong đó có nhiều di sản thế giới UNESCO. Những lễ hội truyền thống như Gion Matsuri thu hút hàng nghìn du khách mỗi năm. Đặc biệt, trà đạo, kimono và nghệ thuật làm giấy truyền thống cũng được bảo tồn rất tốt.",
+      attractionsTitle: "Điểm tham quan nổi bật",
+      attractionsList: `<li>Đền Kinkaku-ji (Chùa Vàng)</li><li>Đền Fushimi Inari với hàng nghìn cổng Torii đỏ</li><li>Khu phố Gion – nơi có các geisha truyền thống</li><li>Rừng tre Arashiyama</li>`,
+      visitTipsTitle: "Lời khuyên khi tham quan",
+      visitTipsText: "Thời điểm đẹp nhất để ghé thăm Kyoto là mùa xuân khi hoa anh đào nở rộ hoặc mùa thu với sắc lá đỏ vàng tuyệt đẹp. Nên chuẩn bị giày thoải mái vì bạn sẽ đi bộ khá nhiều để khám phá các địa điểm.",
+      backHome: "← Quay lại trang chính"
+    },
+    en: {
+      pageTitle: "Kyoto – Ancient and Peaceful",
+      introTitle: "Introduction to Kyoto",
+      introText: "Kyoto is Japan’s ancient capital, famous for its traditional temples, peaceful Japanese gardens, and distinctive culture. The city offers a blend of history and nature, allowing you to experience true tranquility.",
+      cultureTitle: "Culture and Heritage",
+      cultureText: "Kyoto preserves over 1,600 temples and shrines, many of which are UNESCO World Heritage sites. Traditional festivals like Gion Matsuri attract thousands annually. Tea ceremony, kimono culture, and traditional paper-making arts are well preserved.",
+      attractionsTitle: "Top Attractions",
+      attractionsList: `<li>Kinkaku-ji (Golden Pavilion)</li><li>Fushimi Inari Shrine with thousands of red Torii gates</li><li>Gion district – home to traditional geisha</li><li>Arashiyama Bamboo Forest</li>`,
+      visitTipsTitle: "Visiting Tips",
+      visitTipsText: "The best times to visit Kyoto are spring during cherry blossoms or autumn when leaves turn brilliant red and gold. Comfortable shoes are recommended as there is a lot of walking involved.",
+      backHome: "← Back to Home"
+    },
+    jp: {
+      pageTitle: "京都 – 古くて静かな街",
+      introTitle: "京都の紹介",
+      introText: "京都は日本の古都であり、伝統的な寺院、静かな日本庭園、そして独特な文化で有名です。歴史と自然が融合したこの街で、本当の安らぎを体験できます。",
+      cultureTitle: "文化と遺産",
+      cultureText: "京都には1,600以上の寺院や神社が保存されており、多くがユネスコの世界遺産に登録されています。祇園祭などの伝統的な祭りは毎年多くの人を魅了します。茶道、着物、伝統的な和紙作りもよく保存されています。",
+      attractionsTitle: "主な観光スポット",
+      attractionsList: `<li>金閣寺（黄金の寺）</li><li>千本鳥居で有名な伏見稲荷大社</li><li>伝統的な芸者の街、祇園地区</li><li>嵐山の竹林</li>`,
+      visitTipsTitle: "訪問のヒント",
+      visitTipsText: "京都を訪れるのに最適な時期は、桜の咲く春や紅葉の美しい秋です。観光には歩くことが多いため、快適な靴をおすすめします。",
+      backHome: "← ホームに戻る"
+    }
+  };
+
+  function setLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (!key) return;
+      if (translations[lang] && translations[lang][key]) {
+        if (el.tagName.toLowerCase() === 'ul') {
+          el.innerHTML = translations[lang][key];
+        } else {
+          el.textContent = translations[lang][key];
+        }
+      }
+    });
+  }
+
+  // Mặc định tiếng Việt
+  setLanguage('vi');
+</script>
+</body>
+</html>
