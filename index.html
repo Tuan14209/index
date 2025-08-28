@@ -1,426 +1,222 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Khu Du Lịch Nhật Bản</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <title>로그인 페이지</title>
   <style>
-    :root {
-      --bg-color: #fefefe;
-      --text-color: #333;
-      --accent-color: #ff4b4b;
-      --header-text: white;
-    }
-
-    body.dark-mode {
-      --bg-color: #1f1f1f;
-      --text-color: #f1f1f1;
-      --accent-color: #ff8080;
-      --header-text: #fff;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    header {
-      background: url('https://pystravel.vn/_next/image?url=https%3A%2F%2Fbooking.pystravel.vn%2Fuploads%2Fposts%2Favatar%2F1696931228.jpg&w=3840&q=75') no-repeat center center/cover;
-      height: 100vh;
-      color: var(--header-text);
+      font-family: "Noto Sans KR", sans-serif;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-      animation: fadeIn 2s ease-in-out;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+    .login-container {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      width: 360px;
       text-align: center;
+      position: relative;
     }
-
-    header h1 {
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #38bdf8;
     }
-
-    header p {
-      font-size: 1.5rem;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: var(--bg-color);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
-    nav ul li {
-      margin: 15px 20px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: var(--text-color);
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
       font-weight: bold;
-      transition: color 0.3s;
     }
-
-    nav ul li a:hover {
-      color: var(--accent-color);
-    }
-
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      animation: fadeUp 1.5s ease;
-    }
-
-    .title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .title h2 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    .title p {
-      color: #666;
-      font-size: 1.1rem;
-    }
-
-    .places {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .place {
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .place:hover {
-      transform: scale(1.03);
-    }
-
-    .place img {
+    input {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .place h3 {
-      padding: 15px;
-      font-size: 1.4rem;
-      color: var(--accent-color);
-    }
-
-    .place p {
-      padding: 0 15px 20px 15px;
-      color: #555;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    .toggle-container {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .toggle-container button {
-      margin: 0 10px;
-      padding: 8px 16px;
-      font-size: 1rem;
-      cursor: pointer;
-      background: var(--accent-color);
+      padding: 10px;
       border: none;
-      color: white;
-      border-radius: 5px;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
-
-    iframe {
+    button {
       width: 100%;
-      height: 400px;
-      border: 0;
-      border-radius: 10px;
+      padding: 12px;
+      background: #3b82f6;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+    button:hover {
+      background: #2563eb;
     }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+    .message {
+      margin-top: 10px;
+      font-weight: bold;
     }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
+    .success { color: #22c55e; }
+    .error { color: #ef4444; }
+    .links {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .links a {
+      color: #38bdf8;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .lang-select {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #0f172a;
+      color: white;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      padding: 5px;
     }
   </style>
 </head>
 <body>
+  <select id="lang" class="lang-select" onchange="changeLang()">
+    <option value="ko">한국어</option>
+    <option value="en">English</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="jp">日本語</option>
+  </select>
 
-  <header>
-    <h1 data-i18n="headerTitle">Khám Phá Nhật Bản</h1>
-    <p data-i18n="headerDesc">Văn hóa độc đáo – Cảnh sắc tuyệt đẹp – Trải nghiệm không quên</p>
-  </header>
+  <div class="login-container">
+    <h1 id="title">로그인</h1>
 
-  <nav>
-    <ul>
-      <li><a href="#gioi-thieu" data-i18n="navIntro">Giới Thiệu</a></li>
-      <li><a href="#dia-diem" data-i18n="navPlaces">Địa Điểm</a></li>
-      <li><a href="#thu-vien" data-i18n="navGallery">Thư Viện</a></li>
-      <li><a href="#ban-do" data-i18n="navMap">Bản Đồ</a></li>
-      <li><a href="#lien-he" data-i18n="navContact">Liên Hệ</a></li>
-    </ul>
-  </nav>
+    <form onsubmit="return login(event)">
+      <label id="email-label" for="email">이메일</label>
+      <input type="text" id="email" placeholder="이메일 입력" required>
 
-  <div class="toggle-container">
-    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-    <button onclick="setLanguage('vi')">Tiếng Việt</button>
-    <button onclick="setLanguage('en')">English</button>
-	<button onclick="setLanguage('jp')">Japanese</button>
+      <label id="password-label" for="password">비밀번호</label>
+      <input type="password" id="password" placeholder="비밀번호 입력" required>
+
+      <button type="submit" id="login-btn">로그인</button>
+    </form>
+
+    <p id="message" class="message"></p>
+
+    <div class="links">
+      <a href="#" id="signup">회원가입</a> | 
+      <a href="#" id="forgot">비밀번호 찾기</a> | 
+      <a href="dulichjapan.html">➡️ Địa điểm du lịch Nhật Bản</a>
+    </div>
   </div>
-
-  <section id="gioi-thieu">
-    <div class="title">
-      <h2 data-i18n="introTitle">Về Nhật Bản</h2>
-      <p data-i18n="introDesc">Nhật Bản – Xứ sở hoa anh đào với nền văn hóa lâu đời và cảnh quan tuyệt mỹ</p>
-    </div>
-    <p data-i18n="introContent" style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem;">
-      Từ những đền chùa cổ kính ở Kyoto đến nhịp sống hiện đại ở Tokyo...
-    </p>
-  </section>
-
-  <section id="dia-diem">
-    <div class="title">
-      <h2 data-i18n="placeTitle">Địa Điểm Nổi Bật</h2>
-    </div>
-    <div class="place">
-    <img src="https://tournhatban.net/wp-content/uploads/2024/07/6-khu-pho-o-kyoto-8.jpg" />
-    <h3 data-i18n="place1Title">Kyoto – Cổ kính và bình yên</h3>
-    <p data-i18n="place1Desc">Thành phố của những ngôi chùa và đền thờ cổ kính...</p>
-    <a href="kyoto.html" style="display:inline-block; margin: 0 15px 15px; color: var(--accent-color); font-weight: bold;">Xem thêm về Kyoto</a>
-    </div>
-      <div class="place">
-        <img src="https://dulichdaibang.com/theme/root/Shinjuku.png" />
-        <h3 data-i18n="place2Title">Tokyo – Hiện đại và sôi động</h3>
-        <p data-i18n="place2Desc">Thủ đô sầm uất với công nghệ hiện đại...</p>
-		<a href="tokyo.html" style="display:inline-block; margin: 0 15px 15px; color: var(--accent-color); font-weight: bold;">Xem thêm về Tokyo</a>
-      </div>
-      <div class="place">
-        <img src="https://nippontravel.vn/wp-content/uploads/2024/02/Fuji-4.webp" />
-        <h3 data-i18n="place3Title">Núi Phú Sĩ – Biểu tượng hùng vĩ</h3>
-        <p data-i18n="place3Desc">Ngọn núi cao nhất Nhật Bản – điểm đến không thể bỏ lỡ...</p>
-		<a href="nuiphusi.html" style="display:inline-block; margin: 0 15px 15px; color: var(--accent-color); font-weight: bold;">Xem thêm về Núi Phú Sĩ</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="thu-vien">
-    <div class="title">
-      <h2 data-i18n="galleryTitle">Thư Viện Ảnh</h2>
-      <p data-i18n="galleryDesc">Một số hình ảnh nổi bật về Nhật Bản</p>
-    </div>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1554797589-7241bb691973">
-      <img src="https://pystravel.vn/_next/image?url=https%3A%2F%2Fbooking.pystravel.vn%2Fuploads%2Fposts%2Falbums%2F6675%2Ffc9416d90318955460dd1114540b62f5.png&w=1920&q=75">
-      <img src="https://icdn.24h.com.vn/upload/3-2024/images/2024-08-15/14-buc-anh-ngoan-muc-ve-Nhat-Ban-khien-ban-muon-toi-quoc-gia-nay-ngay-1-1723706150-354-width962height643.jpg">
-      <img src="https://cdn.vntrip.vn/cam-nang/wp-content/uploads/2018/07/cc-1.jpg">
-    </div>
-  </section>
-
-  <section id="ban-do">
-    <div class="title">
-      <h2 data-i18n="mapTitle">Bản Đồ Khu Vực</h2>
-      <p data-i18n="mapDesc">Xem vị trí nổi bật tại Nhật Bản (Tokyo)</p>
-    </div>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d414291.7732284351!2d139.4433056623563!3d35.65283216512743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b857f14a5d5%3A0xf52f0f8c4dd8f275!2zVG9reW8sIE5ow6B0IEJhxqFu!5e0!3m2!1svi!2s!4v1697011112451!5m2!1svi!2s" 
-      allowfullscreen=""
-      loading="lazy">
-    </iframe>
-  </section>
-  
-  <section id="lien-he">
-  <div class="title">
-    <h2 data-i18n="contactTitle">Liên Hệ</h2>
-    <p data-i18n="contactDesc">Đặt tour hoặc nhận tư vấn miễn phí</p>
-  </div>
-  <form style="max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 15px;">
-    <input type="text" placeholder="Họ và Tên" required />
-    <input type="email" placeholder="Email" required />
-    <textarea placeholder="Nội dung liên hệ" rows="5" required></textarea>
-    <button type="submit" style="background: var(--accent-color); color: white;">Gửi Liên Hệ</button>
-  </form>
-  <div style="max-width: 600px; margin: 40px auto 0; padding: 20px; background: #eee; border-radius: 8px; color: var(--text-color);">
-    <h3 data-i18n="contactAddressTitle">Địa Chỉ</h3>
-    <p data-i18n="contactAddress">Đường ???, Quận Shibuya, Tokyo, Nhật Bản</p>
-    <p data-i18n="contactPhone">Điện thoại: +81 3 1234 5678</p>
-    <p data-i18n="contactEmail">Email: info@tranhoangtuan.jp</p>
-  </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Du Lịch Nhật Bản | Thiết kế bởi ChatGPT</p>
-  </footer>
 
   <script>
-  function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-  }
+    // ✅ Tài khoản demo
+    const users = [
+      { email: "admin", password: "123456" },
+      { email: "user@japan.com", password: "password" }
+    ];
 
-  const translations = {
-    vi: {
-      headerTitle: "Khám Phá Nhật Bản",
-      headerDesc: "Văn hóa độc đáo – Cảnh sắc tuyệt đẹp – Trải nghiệm không quên",
-      navIntro: "Giới Thiệu",
-      navPlaces: "Địa Điểm",
-      navGallery: "Thư Viện",
-      navMap: "Bản Đồ",
-      navContact: "Liên Hệ",
-      introTitle: "Về Nhật Bản",
-      introDesc: "Nhật Bản – Xứ sở hoa anh đào với nền văn hóa lâu đời và cảnh quan tuyệt mỹ",
-      introContent: "Từ những đền chùa cổ kính ở Kyoto đến nhịp sống hiện đại ở Tokyo...",
-      placeTitle: "Địa Điểm Nổi Bật",
-      place1Title: "Kyoto – Cổ kính và bình yên",
-      place1Desc: "Thành phố của những ngôi chùa và đền thờ cổ kính...",
-      place2Title: "Tokyo – Hiện đại và sôi động",
-      place2Desc: "Thủ đô sầm uất với công nghệ hiện đại...",
-      place3Title: "Núi Phú Sĩ – Biểu tượng hùng vĩ",
-      place3Desc: "Ngọn núi cao nhất Nhật Bản – điểm đến không thể bỏ lỡ...",
-      galleryTitle: "Thư Viện Ảnh",
-      galleryDesc: "Một số hình ảnh nổi bật về Nhật Bản",
-      mapTitle: "Bản Đồ Khu Vực",
-      mapDesc: "Xem vị trí nổi bật tại Nhật Bản (Tokyo)",
-      contactTitle: "Liên Hệ",
-      contactDesc: "Đặt tour hoặc nhận tư vấn miễn phí",
-      contactAddressTitle: "Địa Chỉ",
-      contactAddress: "123 Đường Sakura, Quận Shibuya, Tokyo, Nhật Bản",
-      contactPhone: "Điện thoại: +81 3 1234 5678",
-      contactEmail: "Email: info@dulichnhatban.jp"
-    },
-    en: {
-      headerTitle: "Explore Japan",
-      headerDesc: "Unique culture – Stunning landscapes – Unforgettable journey",
-      navIntro: "Introduction",
-      navPlaces: "Places",
-      navGallery: "Gallery",
-      navMap: "Map",
-      navContact: "Contact",
-      introTitle: "About Japan",
-      introDesc: "Japan – The land of cherry blossoms with rich culture and beauty",
-      introContent: "From ancient temples in Kyoto to modern life in Tokyo, Japan is a perfect destination...",
-      placeTitle: "Top Destinations",
-      place1Title: "Kyoto – Ancient & Peaceful",
-      place1Desc: "The city of ancient temples and traditional Japanese spirit.",
-      place2Title: "Tokyo – Modern & Dynamic",
-      place2Desc: "A bustling capital with cutting-edge tech and vibrant culture.",
-      place3Title: "Mount Fuji – Majestic Symbol",
-      place3Desc: "The highest mountain in Japan – a must-see for nature lovers.",
-      galleryTitle: "Photo Gallery",
-      galleryDesc: "A collection of breathtaking moments in Japan",
-      mapTitle: "Map of the Area",
-      mapDesc: "Explore key locations in Tokyo, Japan",
-      contactTitle: "Contact Us",
-      contactDesc: "Book your tour or get free consultation",
-      contactAddressTitle: "Address",
-      contactAddress: "123 Sakura Street, Shibuya, Tokyo, Japan",
-      contactPhone: "Phone: +81 3 1234 5678",
-      contactEmail: "Email: info@dulichnhatban.jp"
-    },
-    jp: {
-      headerTitle: "日本を探検する",
-      headerDesc: "独特な文化 – 素晴らしい景観 – 忘れられない体験",
-      navIntro: "紹介",
-      navPlaces: "場所",
-      navGallery: "ギャラリー",
-      navMap: "地図",
-      navContact: "連絡先",
-      introTitle: "日本について",
-      introDesc: "日本 – 桜の国であり、豊かな文化と美しい景観",
-      introContent: "京都の古い寺院から東京の現代生活まで、日本は完璧な目的地です...",
-      placeTitle: "人気の目的地",
-      place1Title: "京都 – 古くて静か",
-      place1Desc: "古い寺院と伝統的な日本の精神の街。",
-      place2Title: "東京 – 現代的で活気ある",
-      place2Desc: "最先端技術と活気ある文化を持つ賑やかな首都。",
-      place3Title: "富士山 – 壮大な象徴",
-      place3Desc: "日本で最も高い山 – 自然愛好家に必見の場所。",
-      galleryTitle: "フォトギャラリー",
-      galleryDesc: "日本の息をのむ瞬間のコレクション",
-      mapTitle: "地域の地図",
-      mapDesc: "東京、日本の主要な場所を探索",
-      contactTitle: "お問い合わせ",
-      contactDesc: "ツアーを予約するか、無料相談を受ける",
-      contactAddressTitle: "住所",
-      contactAddress: "日本、東京、渋谷区、桜通り123番地",
-      contactPhone: "電話番号: +81 3 1234 5678",
-      contactEmail: "メール: info@dulichnhatban.jp"
-    }
-  };
-
-  function setLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-      const key = el.getAttribute("data-i18n");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
+    // Đa ngôn ngữ
+    const translations = {
+      ko: {
+        title: "로그인",
+        email: "이메일",
+        emailPh: "이메일 입력",
+        password: "비밀번호",
+        passwordPh: "비밀번호 입력",
+        login: "로그인",
+        signup: "회원가입",
+        forgot: "비밀번호 찾기",
+        success: "✅ 로그인 성공!",
+        fail: "❌ 이메일 또는 비밀번호가 올바르지 않습니다."
+      },
+      en: {
+        title: "Login",
+        email: "Email",
+        emailPh: "Enter your email",
+        password: "Password",
+        passwordPh: "Enter your password",
+        login: "Login",
+        signup: "Sign Up",
+        forgot: "Forgot Password?",
+        success: "✅ Login successful!",
+        fail: "❌ Incorrect email or password."
+      },
+      vi: {
+        title: "Đăng nhập",
+        email: "Email",
+        emailPh: "Nhập email",
+        password: "Mật khẩu",
+        passwordPh: "Nhập mật khẩu",
+        login: "Đăng nhập",
+        signup: "Đăng ký",
+        forgot: "Quên mật khẩu?",
+        success: "✅ Đăng nhập thành công!",
+        fail: "❌ Email hoặc mật khẩu sai."
+      },
+      jp: {
+        title: "ログイン",
+        email: "メール",
+        emailPh: "メールを入力してください",
+        password: "パスワード",
+        passwordPh: "パスワードを入力してください",
+        login: "ログイン",
+        signup: "新規登録",
+        forgot: "パスワードをお忘れですか？",
+        success: "✅ ログイン成功！",
+        fail: "❌ メールまたはパスワードが正しくありません。"
       }
-    });
-  }
-</script>
+    };
+
+    function changeLang() {
+      const lang = document.getElementById("lang").value;
+      const t = translations[lang];
+
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("email-label").textContent = t.email;
+      document.getElementById("email").placeholder = t.emailPh;
+      document.getElementById("password-label").textContent = t.password;
+      document.getElementById("password").placeholder = t.passwordPh;
+      document.getElementById("login-btn").textContent = t.login;
+      document.getElementById("signup").textContent = t.signup;
+      document.getElementById("forgot").textContent = t.forgot;
+      document.getElementById("message").textContent = "";  // reset message when change lang
+    }
+
+    function login(event) {
+      event.preventDefault();
+
+      const lang = document.getElementById("lang").value;
+      const t = translations[lang];
+
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const message = document.getElementById("message");
+
+      const user = users.find(u => u.email === email && u.password === password);
+
+      if (user) {
+        message.textContent = t.success;
+        message.className = "message success";
+
+        setTimeout(() => {
+          window.location.href = "dulichjapan.html";
+        }, 1500);
+
+      } else {
+        message.textContent = t.fail;
+        message.className = "message error";
+      }
+    }
+
+    // Tự động chọn ngôn ngữ theo mặc định select khi load trang
+    window.onload = changeLang;
+  </script>
 </body>
 </html>
