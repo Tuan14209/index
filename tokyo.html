@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tokyo – Hiện đại và sôi động</title>
+  <title>Tokyo – Thành Phố Hiện Đại Và Sôi Động</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg-color: #fefefe;
-      --text-color: #333;
-      --accent-color: #ff4b4b;
+      --text-color: #222;
+      --accent-color: #e60039; /* đỏ tươi hơn */
       --header-text: white;
     }
     body.dark-mode {
-      --bg-color: #1f1f1f;
-      --text-color: #f1f1f1;
-      --accent-color: #ff8080;
+      --bg-color: #1a1a1a;
+      --text-color: #f5f5f5;
+      --accent-color: #ff4d6d; /* màu neon hồng khi dark mode */
       --header-text: #fff;
     }
     * {
@@ -42,19 +42,20 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+      text-shadow: 0 3px 8px rgba(0,0,0,0.8);
       text-align: center;
       border-radius: 8px;
       margin-bottom: 30px;
       animation: fadeIn 1.8s ease-in-out;
     }
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
+      font-size: 3.2rem;
+      margin-bottom: 0.6rem;
+      color: #ffeb3b; /* vàng neon nổi bật */
     }
     header p {
-      font-size: 1.3rem;
-      max-width: 600px;
+      font-size: 1.4rem;
+      max-width: 650px;
     }
     nav {
       margin-bottom: 20px;
@@ -71,10 +72,13 @@
       border-radius: 5px;
       background: var(--accent-color);
       color: white;
-      transition: background 0.3s;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, background 0.3s;
     }
     nav button:hover {
-      background: #e03e3e;
+      background: #cc0033;
+      transform: scale(1.05);
     }
     main {
       flex-grow: 1;
@@ -82,17 +86,18 @@
       margin: auto;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
       color: var(--accent-color);
       text-align: center;
+      text-transform: uppercase;
     }
     section {
       margin-bottom: 40px;
       animation: fadeUp 1.5s ease;
     }
     p {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-color);
       max-width: 800px;
       margin: 0 auto 20px auto;
@@ -111,11 +116,12 @@
       border: 2px solid var(--accent-color);
       padding: 10px 20px;
       border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
+      transition: background 0.3s, color 0.3s, transform 0.2s;
     }
     .back-link a:hover {
       background: var(--accent-color);
       color: white;
+      transform: scale(1.05);
     }
     @keyframes fadeIn {
       from {opacity: 0; transform: translateY(-20px);}
@@ -127,7 +133,7 @@
     }
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
       header p {
         font-size: 1rem;
@@ -147,8 +153,8 @@
 <body>
 
 <header>
-  <h1 data-i18n="headerTitle">Tokyo – Hiện đại và sôi động</h1>
-  <p data-i18n="headerDesc">Thủ đô sầm uất với công nghệ hiện đại và văn hóa đa dạng</p>
+  <h1 data-i18n="headerTitle">Tokyo – Thành phố không ngủ</h1>
+  <p data-i18n="headerDesc"></p>
 </header>
 
 <nav>
@@ -160,23 +166,23 @@
 
 <main>
   <section>
-    <h2 data-i18n="introTitle">Giới Thiệu</h2>
+    <h2 data-i18n="introTitle">Khám Phá Tokyo</h2>
     <p data-i18n="introContent">
-      Tokyo là thủ đô của Nhật Bản, nổi tiếng với sự pha trộn giữa truyền thống và hiện đại. Thành phố này không chỉ là trung tâm kinh tế, văn hóa mà còn là điểm đến hấp dẫn với các công trình kiến trúc cao tầng, khu mua sắm sầm uất và nhiều lễ hội đặc sắc.
+      Tokyo – thủ đô nhộn nhịp của Nhật Bản, là sự kết hợp hoàn hảo giữa quá khứ và tương lai. Thành phố này vừa sở hữu những tòa tháp hiện đại vươn cao, vừa giữ lại những ngôi chùa cổ kính, mang đến cho du khách trải nghiệm độc đáo không nơi nào có được.
     </p>
   </section>
 
   <section>
-    <h2 data-i18n="cultureTitle">Văn Hóa và Cuộc Sống</h2>
+    <h2 data-i18n="cultureTitle">Văn Hóa & Nhịp Sống</h2>
     <p data-i18n="cultureContent">
-      Tokyo là nơi giao thoa của văn hóa cổ truyền với phong cách sống hiện đại. Từ những ngôi đền cổ như Meiji Jingu đến các khu phố thời trang như Shibuya, Shinjuku, bạn sẽ được trải nghiệm sự đa dạng không giới hạn.
+      Tokyo là trung tâm của sự giao thoa văn hóa. Bạn có thể hòa mình vào sự tĩnh lặng ở đền Meiji Jingu, rồi ngay lập tức bước ra phố Shibuya sôi động với dòng người tấp nập. Mỗi góc phố đều kể một câu chuyện riêng về nhịp sống đầy màu sắc nơi đây.
     </p>
   </section>
 
   <section>
-    <h2 data-i18n="techTitle">Công Nghệ và Giải Trí</h2>
+    <h2 data-i18n="techTitle">Công Nghệ & Giải Trí</h2>
     <p data-i18n="techContent">
-      Thành phố này cũng được biết đến với các công nghệ tiên tiến và các trung tâm giải trí hiện đại như Akihabara – thiên đường dành cho tín đồ công nghệ và anime.
+      Được mệnh danh là thủ phủ công nghệ, Tokyo có Akihabara – thiên đường cho fan anime, manga và điện tử. Song song đó là những khu vui chơi, nhà hàng, quán bar mở cửa suốt đêm, biến Tokyo thành một “thành phố không ngủ” đúng nghĩa.
     </p>
   </section>
 </main>
@@ -192,36 +198,36 @@
 
   const translations = {
     vi: {
-      headerTitle: "Tokyo – Hiện đại và sôi động",
-      headerDesc: "Thủ đô sầm uất với công nghệ hiện đại và văn hóa đa dạng",
-      introTitle: "Giới Thiệu",
-      introContent: "Tokyo là thủ đô của Nhật Bản, nổi tiếng với sự pha trộn giữa truyền thống và hiện đại. Thành phố này không chỉ là trung tâm kinh tế, văn hóa mà còn là điểm đến hấp dẫn với các công trình kiến trúc cao tầng, khu mua sắm sầm uất và nhiều lễ hội đặc sắc.",
-      cultureTitle: "Văn Hóa và Cuộc Sống",
-      cultureContent: "Tokyo là nơi giao thoa của văn hóa cổ truyền với phong cách sống hiện đại. Từ những ngôi đền cổ như Meiji Jingu đến các khu phố thời trang như Shibuya, Shinjuku, bạn sẽ được trải nghiệm sự đa dạng không giới hạn.",
-      techTitle: "Công Nghệ và Giải Trí",
-      techContent: "Thành phố này cũng được biết đến với các công nghệ tiên tiến và các trung tâm giải trí hiện đại như Akihabara – thiên đường dành cho tín đồ công nghệ và anime.",
+      headerTitle: "Tokyo – Thành phố không ngủ",
+      headerDesc: "Nơi ánh đèn neon rực rỡ hòa cùng nhịp sống hiện đại và văn hóa đặc sắc",
+      introTitle: "Khám Phá Tokyo",
+      introContent: "Tokyo – thủ đô nhộn nhịp của Nhật Bản, là sự kết hợp hoàn hảo giữa quá khứ và tương lai. Thành phố này vừa sở hữu những tòa tháp hiện đại vươn cao, vừa giữ lại những ngôi chùa cổ kính, mang đến cho du khách trải nghiệm độc đáo không nơi nào có được.",
+      cultureTitle: "Văn Hóa & Nhịp Sống",
+      cultureContent: "Tokyo là trung tâm của sự giao thoa văn hóa. Bạn có thể hòa mình vào sự tĩnh lặng ở đền Meiji Jingu, rồi ngay lập tức bước ra phố Shibuya sôi động với dòng người tấp nập. Mỗi góc phố đều kể một câu chuyện riêng về nhịp sống đầy màu sắc nơi đây.",
+      techTitle: "Công Nghệ & Giải Trí",
+      techContent: "Được mệnh danh là thủ phủ công nghệ, Tokyo có Akihabara – thiên đường cho fan anime, manga và điện tử. Song song đó là những khu vui chơi, nhà hàng, quán bar mở cửa suốt đêm, biến Tokyo thành một “thành phố không ngủ” đúng nghĩa.",
       backHome: "← Quay lại trang chính"
     },
     en: {
-      headerTitle: "Tokyo – Modern & Dynamic",
-      headerDesc: "The bustling capital with cutting-edge technology and diverse culture",
-      introTitle: "Introduction",
-      introContent: "Tokyo is the capital of Japan, famous for blending tradition and modernity. It is not only an economic and cultural center but also an attractive destination with skyscrapers, busy shopping areas, and many vibrant festivals.",
+      headerTitle: "Tokyo – The City That Never Sleeps",
+      headerDesc: "Where neon lights shine alongside modern life and rich traditions",
+      introTitle: "Discover Tokyo",
+      introContent: "Tokyo, the bustling capital of Japan, is the perfect fusion of past and future. Skyscrapers rise high while ancient temples remain preserved, giving visitors a one-of-a-kind experience.",
       cultureTitle: "Culture & Lifestyle",
-      cultureContent: "Tokyo is where traditional culture meets modern lifestyle. From ancient shrines like Meiji Jingu to fashionable districts such as Shibuya and Shinjuku, you’ll experience endless diversity.",
+      cultureContent: "Tokyo is the heart of cultural fusion. You can find peace at Meiji Jingu Shrine and, within minutes, dive into the vibrant chaos of Shibuya Crossing. Every corner tells a unique story about life in this dazzling city.",
       techTitle: "Technology & Entertainment",
-      techContent: "This city is also known for advanced technology and modern entertainment centers like Akihabara – a paradise for tech and anime fans.",
+      techContent: "Known as the hub of technology, Tokyo offers Akihabara – paradise for anime, manga, and electronics fans. Alongside, nightlife districts, bars, and restaurants make Tokyo truly a city that never sleeps.",
       backHome: "← Back to Home"
     },
     jp: {
-      headerTitle: "東京 – 現代的で活気ある",
-      headerDesc: "最先端技術と多様な文化を持つ活気ある首都",
-      introTitle: "紹介",
-      introContent: "東京は伝統と現代性が融合した日本の首都です。経済・文化の中心地であるだけでなく、高層ビルや賑やかなショッピングエリア、多くの祭りが楽しめる魅力的な目的地でもあります。",
-      cultureTitle: "文化と生活",
-      cultureContent: "東京は伝統文化と現代的なライフスタイルが交差する場所です。明治神宮のような古い神社から、渋谷や新宿のファッショナブルな地区まで、多様性を体験できます。",
+      headerTitle: "東京 – 眠らない街",
+      headerDesc: "ネオンライトが輝き、現代生活と豊かな伝統が共存する場所",
+      introTitle: "東京を探検",
+      introContent: "日本の首都・東京は、過去と未来が融合する都市です。高層ビルがそびえ立つ一方、古い寺社も大切に守られ、訪れる人に唯一無二の体験を与えます。",
+      cultureTitle: "文化とライフスタイル",
+      cultureContent: "東京は文化の交差点です。明治神宮で静けさを味わった後、渋谷のスクランブル交差点で人波に包まれる体験もできます。街の隅々が多彩な物語を語っています。",
       techTitle: "技術とエンターテインメント",
-      techContent: "この都市は先進技術や秋葉原のような現代的な娯楽施設でも知られています。秋葉原は技術やアニメファンの楽園です。",
+      techContent: "東京は技術の中心地としても知られています。秋葉原はアニメや漫画、電子機器のファンにとっての楽園です。また、夜通し楽しめる飲食街やナイトスポットも揃い、本当の意味で「眠らない街」と呼ばれています。",
       backHome: "← ホームへ戻る"
     }
   };
@@ -236,5 +242,4 @@
   }
 </script>
 </body>
-
 </html>
